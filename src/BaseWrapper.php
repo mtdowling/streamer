@@ -34,24 +34,11 @@ class BaseWrapper
         ]));
 
         if (!$wrapper) {
-            throw new \RuntimeException('Unable to wrap the stream with ' 
+            throw new \RuntimeException('Unable to wrap the stream with '
                 . $protocol);
         }
 
         return $wrapper;
-    }
-
-    public static function fromString($str = '', $mode = 'r+')
-    {
-        $stream = fopen('php://temp', $mode);
-
-        if ($str !== '') {
-            fwrite($stream, $str);
-        }
-
-        fseek($stream, 0);
-
-        return $stream;
     }
 
     public function stream_open($path, $mode, $options, &$opened_path)

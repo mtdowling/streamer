@@ -30,8 +30,8 @@ class Utils
     {
         $stream = fopen('php://temp', $mode);
 
-        if ($str !== '') {
-            fwrite($stream, $str);
+        if ($string !== '') {
+            fwrite($stream, $string);
         }
 
         fseek($stream, 0);

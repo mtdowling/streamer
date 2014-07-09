@@ -4,10 +4,11 @@ Example:
 
     require 'vendor/autoload.php';
 
+    use GuzzleHttp\Streamer\Utils;
     use GuzzleHttp\Streamer\BaseWrapper;
     use GuzzleHttp\Streamer\NoSeek;
 
-    $base = BaseWrapper::fromString('foobar');
+    $base = Utils::fromString('foobar');
     $f = NoSeek::wrap($base);
     
     echo fread($f, 10);
